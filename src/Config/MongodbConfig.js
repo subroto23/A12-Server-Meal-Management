@@ -1,0 +1,30 @@
+const { MongoClient, ServerApiVersion } = require("mongodb");
+const { MONGODB_URL } = require("../Secret");
+
+//Mongodb Client
+const client = new MongoClient(MONGODB_URL, {
+  serverApi: {
+    version: ServerApiVersion.v1,
+    strict: true,
+    deprecationErrors: true,
+  },
+});
+
+//
+const mongodbConnection = async () => {
+  try {
+    await client.connect();
+    console.log("Mongodb Connected Successfully");
+  } catch (error) {
+    console.log("Mongodb Not Connected");
+  }
+};
+
+//Database and Connection Name
+const allMeals = client.db("meals").collection("allmeals");
+
+//Export MongoDb Collections
+module.exports = {
+  mongodbConnection,
+  allMeals,
+};
