@@ -22,9 +22,11 @@ const mongodbConnection = async () => {
 
 //Database and Connection Name
 const allMeals = client.db("meals").collection("allmeals");
+const upcommingMeals = client.db("meals").collection("upcomming");
 
 //Export MongoDb Collections
 module.exports = {
   mongodbConnection,
+  upcommingMeals,
   allMeals,
 };
