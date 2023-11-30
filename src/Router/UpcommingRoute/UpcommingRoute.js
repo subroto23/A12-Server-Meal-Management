@@ -1,5 +1,5 @@
 const express = require("express");
-const UpcommingPostController = require("../../Controller/AllMeals/UpcommingController/UpcommingPostController");
+const UpcommingPostController = require("../../Controller/UpcommingController/UpcommingPostController");
 const UpcommingRoute = express.Router();
 
 UpcommingRoute.post("/meal/create", UpcommingPostController);

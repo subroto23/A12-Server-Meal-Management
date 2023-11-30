@@ -1,4 +1,4 @@
-const { upcommingMeals } = require("../../../Config/MongodbConfig");
+const { upcommingMeals } = require("../../Config/MongodbConfig");
 
 const UpcommingPostController = async (req, res, next) => {
   try {
