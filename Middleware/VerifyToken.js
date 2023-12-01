@@ -1,12 +1,12 @@
 const jwt = require("jsonwebtoken");
+const { ACCESS_TOKEN_KEY_VALUE } = require("../src/Secret");
 
 const VerifyToken = (req, res, next) => {
-  console.log(req.headers);
-  if (!req.headers.authorization) {
+  if (!req?.headers?.authorization) {
     return res.status(401).send({ message: "unauthorized access" });
   }
-  const token = req.headers.authorization.split(" ")[1];
-  jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, decoded) => {
+  const token = req?.headers?.authorization.split(" ")[1];
+  jwt.verify(token, ACCESS_TOKEN_KEY_VALUE, (err, decoded) => {
     if (err) {
       return res.status(401).send({ message: "unauthorized access" });
     }
