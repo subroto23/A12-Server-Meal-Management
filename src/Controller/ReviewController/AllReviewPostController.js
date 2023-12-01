@@ -2,7 +2,7 @@ const { allReviews } = require("../../Config/MongodbConfig");
 
 const AllReviewPostController = async (req, res, next) => {
   try {
-    if (req?.query?.email !== req.decoded.email) {
+    if (req?.query?.email !== req?.decoded?.email) {
       return res.status(403).send({ message: "forbidden access" });
     }
     const reviewsData = req.body;

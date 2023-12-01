@@ -18,8 +18,12 @@ AllmealsRoute.post(
   VerifyAdmin,
   allMealsPostController
 );
-AllmealsRoute.patch("/like/count",VerifyToken, AllMealsPatchController);
-AllmealsRoute.patch("/reviews/count", AllMealsReviewsPatchController);
+AllmealsRoute.patch("/like/count", VerifyToken, AllMealsPatchController);
+AllmealsRoute.patch(
+  "/reviews/count",
+  VerifyToken,
+  AllMealsReviewsPatchController
+);
 AllmealsRoute.put(
   "/update/:id",
   VerifyToken,
