@@ -24,6 +24,7 @@ const mongodbConnection = async () => {
 const Users = client.db("meals").collection("users");
 const allMeals = client.db("meals").collection("allmeals");
 const upcommingMeals = client.db("meals").collection("upcomming");
+const allReviews = client.db("meals").collection("reviews");
 
 //Export MongoDb Collections
 module.exports = {
@@ -31,4 +32,5 @@ module.exports = {
   mongodbConnection,
   upcommingMeals,
   allMeals,
+  allReviews,
 };

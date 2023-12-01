@@ -4,11 +4,10 @@ const { allMeals } = require("../../Config/MongodbConfig");
 const AllMealsUpdateController = async (req, res, next) => {
   try {
     const id = req?.params?.id;
-    const { title, type, imageUrl, Ingredients, details, price, rating } =
-      req?.body;
+    const { title, type, Ingredients, details, price, rating } = req?.body;
     const filter = { _id: new ObjectId(id) };
     const query = {
-      $set: { title, type, imageUrl, Ingredients, details, price, rating },
+      $set: { title, type, Ingredients, details, price, rating },
     };
     const options = { new: true };
 
