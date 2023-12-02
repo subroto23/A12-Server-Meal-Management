@@ -6,8 +6,10 @@ const UsersGetController = require("../../Controller/UsersController/UsersGetCon
 const VerifyToken = require("../../../Middleware/VerifyToken");
 const UsersPatchController = require("../../Controller/UsersController/UsersPatchController");
 const VerifyAdmin = require("../../../Middleware/VerifyAdmin");
+const UsersGetAdminController = require("../../Controller/UsersController/UsersGetAdminController");
 
-UsersRoute.get("/all/users", VerifyToken, VerifyAdmin, UsersGetController);
+UsersRoute.get("/all/users", VerifyToken, UsersGetController);
+UsersRoute.get("/admin/:email", VerifyToken, UsersGetAdminController);
 UsersRoute.patch(
   "/user/make-admin",
   VerifyToken,
