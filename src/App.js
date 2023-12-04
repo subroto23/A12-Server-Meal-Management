@@ -9,7 +9,12 @@ const ReviewsRoute = require("./Router/Reviews/ReviewsRoute");
 const PaymentRouteStripe = require("./Router/PaymentStripe/PaymentRoute");
 const OrderRouter = require("./Router/OrderRoute/OrderRouter");
 //middleWare
-app.use(cors());
+app.use(
+  cors({
+    origin: ["https://hostel-management-delta.vercel.app"],
+    credentials: true,
+  })
+);
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
