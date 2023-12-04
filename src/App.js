@@ -6,6 +6,7 @@ const AllmealsRoute = require("./Router/AllMeals/AllMeals");
 const UpcommingRoute = require("./Router/UpcommingRoute/UpcommingRoute");
 const UsersRoute = require("./Router/UsersRoute/UsersRoute");
 const ReviewsRoute = require("./Router/Reviews/ReviewsRoute");
+const PaymentRouteStripe = require("./Router/PaymentStripe/PaymentRoute");
 
 //middleWare
 app.use(cors());
@@ -26,6 +27,9 @@ app.use("/api/upcomming", UpcommingRoute);
 
 //Review Route
 app.use("/reviews", ReviewsRoute);
+
+//PaymentRoute
+app.use("/payment", PaymentRouteStripe);
 
 //Error Router
 app.use((err, req, res, next) => {
