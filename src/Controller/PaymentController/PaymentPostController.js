@@ -1,6 +1,6 @@
 const { payment_secret } = require("../../Secret");
-
 const stripe = require("stripe")(payment_secret);
+
 const PaymentPostController = async (req, res, next) => {
   try {
     const { price } = req.body;
