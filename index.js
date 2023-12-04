@@ -1,14 +1,14 @@
 const app = require("./src/App");
 const { mongodbConnection } = require("./src/Config/MongodbConfig");
-const { PORT } = require("./src/Secret");
+const { PortNumber } = require("./src/Secret");
 
 app.get("/", (req, res) => {
-  res.send("A12 Server Running");
+  res.send("A12 Server is Running");
 });
 
 //Server Preview Check
-app.listen(PORT, async () => {
-  console.log(`Server is Running at http://localhost:${PORT}`);
+app.listen(PortNumber, async () => {
+  console.log(`Server is Running at http://localhost:${PortNumber}`);
   //Mongodb Connections
   await mongodbConnection();
 });
