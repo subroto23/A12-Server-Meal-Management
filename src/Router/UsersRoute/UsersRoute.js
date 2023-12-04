@@ -5,8 +5,9 @@ const UserPostCreateController = require("../../Controller/UsersController/UserP
 const UsersGetController = require("../../Controller/UsersController/UsersGetController");
 const VerifyToken = require("../../../Middleware/VerifyToken");
 const UsersPatchController = require("../../Controller/UsersController/UsersPatchController");
-const VerifyAdmin = require("../../../Middleware/VerifyAdmin");
 const UsersGetAdminController = require("../../Controller/UsersController/UsersGetAdminController");
+const UsersCatagoryPatch = require("../../Controller/UsersController/UsersCatagoryPathc");
+const VerifyAdmin = require("../../../Middleware/VerifyAdmin");
 
 UsersRoute.get("/all/users", VerifyToken, UsersGetController);
 UsersRoute.get("/admin/:email", VerifyToken, UsersGetAdminController);
@@ -16,6 +17,7 @@ UsersRoute.patch(
   VerifyAdmin,
   UsersPatchController
 );
+UsersRoute.patch("/user/catagory", VerifyToken, UsersCatagoryPatch);
 UsersRoute.post("/", UsersPostController);
 UsersRoute.post("/create/user", UserPostCreateController);
 module.exports = UsersRoute;

@@ -7,7 +7,7 @@ const UpcommingRoute = require("./Router/UpcommingRoute/UpcommingRoute");
 const UsersRoute = require("./Router/UsersRoute/UsersRoute");
 const ReviewsRoute = require("./Router/Reviews/ReviewsRoute");
 const PaymentRouteStripe = require("./Router/PaymentStripe/PaymentRoute");
-
+const OrderRouter = require("./Router/OrderRoute/OrderRouter");
 //middleWare
 app.use(cors());
 app.use(express.json());
@@ -30,6 +30,9 @@ app.use("/reviews", ReviewsRoute);
 
 //PaymentRoute
 app.use("/payment", PaymentRouteStripe);
+
+//OrderRoute
+app.use("/orders", OrderRouter);
 
 //Error Router
 app.use((err, req, res, next) => {

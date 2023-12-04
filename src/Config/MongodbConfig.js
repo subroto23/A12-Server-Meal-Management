@@ -13,7 +13,7 @@ const client = new MongoClient(MONGODB_URL, {
 //
 const mongodbConnection = async () => {
   try {
-    await client.connect();
+    // await client.connect();
     console.log("Mongodb Connected Successfully");
   } catch (error) {
     console.log("Mongodb Not Connected");
@@ -25,6 +25,7 @@ const Users = client.db("meals").collection("users");
 const allMeals = client.db("meals").collection("allmeals");
 const upcommingMeals = client.db("meals").collection("upcomming");
 const allReviews = client.db("meals").collection("reviews");
+const orders = client.db("meals").collection("orders");
 
 //Export MongoDb Collections
 module.exports = {
@@ -33,4 +34,5 @@ module.exports = {
   upcommingMeals,
   allMeals,
   allReviews,
+  orders,
 };

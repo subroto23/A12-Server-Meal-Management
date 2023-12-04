@@ -5,11 +5,11 @@ const MONGODB_URL = process.env.MONGODB_URL_CONNECTIONS;
 
 const ACCESS_TOKEN_KEY_VALUE = process.env.ACCESS_TOKEN_KEY;
 
-const PAYMENT_SECRET = process.env.PAYMENT_SECRET_KEY;
+const payment_secret = process.env.PAYMENT_SECRET_KEY;
 
 module.exports = {
   PortNumber,
   MONGODB_URL,
   ACCESS_TOKEN_KEY_VALUE,
-  PAYMENT_SECRET,
+  payment_secret,
 };

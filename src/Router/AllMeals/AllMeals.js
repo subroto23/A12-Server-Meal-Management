@@ -1,6 +1,5 @@
 const express = require("express");
 const allMealsPostController = require("../../Controller/AllMeals/allMealsPostController");
-const allMealsGetController = require("../../Controller/AllMeals/allMealsGetController");
 const AllMealsDeleteController = require("../../Controller/AllMeals/AllMealsDeleteController");
 const AllMealsUpdateController = require("../../Controller/AllMeals/AllMealsUpdateController");
 const AllMealsGetControllerById = require("../../Controller/AllMeals/AllMealsGetControllerById");
@@ -8,6 +7,7 @@ const AllMealsPatchController = require("../../Controller/AllMeals/AllMealsPatch
 const AllMealsReviewsPatchController = require("../../Controller/AllMeals/AllMealsReviewsPatchController");
 const VerifyToken = require("../../../Middleware/VerifyToken");
 const VerifyAdmin = require("../../../Middleware/VerifyAdmin");
+const allMealsGetController = require("../../Controller/AllMeals/AllMealsGetController");
 const AllmealsRoute = express.Router();
 
 AllmealsRoute.get("/", allMealsGetController);
