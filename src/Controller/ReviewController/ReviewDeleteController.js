@@ -1,6 +1,4 @@
-const { ObjectId } = require("mongodb");
 const { allReviews } = require("../../Config/MongodbConfig");
-const { options } = require("../../Router/Reviews/ReviewsRoute");
 
 const ReviewDeleteController = async (req, res, next) => {
   try {
