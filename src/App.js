@@ -11,7 +11,7 @@ const OrderRouter = require("./Router/OrderRoute/OrderRouter");
 //middleWare
 app.use(
   cors({
-    origin: ["https://hostel-management-delta.vercel.app"],
+    origin: ["http://localhost:5173"],
     credentials: true,
   })
 );
