@@ -8,8 +8,10 @@ const AllMealsReviewsPatchController = require("../../Controller/AllMeals/AllMea
 const VerifyToken = require("../../../Middleware/VerifyToken");
 const VerifyAdmin = require("../../../Middleware/VerifyAdmin");
 const allMealsGetController = require("../../Controller/AllMeals/AllMealsGetController");
+const AllMealsSecureController = require("../../Controller/AllMeals/AllMealsSecureController");
 const AllmealsRoute = express.Router();
 
+AllmealsRoute.get("/admin", VerifyToken, VerifyAdmin, AllMealsSecureController);
 AllmealsRoute.get("/", allMealsGetController);
 AllmealsRoute.get("/:id", AllMealsGetControllerById);
 AllmealsRoute.post(

@@ -8,6 +8,7 @@ const UsersRoute = require("./Router/UsersRoute/UsersRoute");
 const ReviewsRoute = require("./Router/Reviews/ReviewsRoute");
 const PaymentRouteStripe = require("./Router/PaymentStripe/PaymentRoute");
 const OrderRouter = require("./Router/OrderRoute/OrderRouter");
+const Balance = require("./Router/Balance/balanceRoute");
 //middleWare
 app.use(
   cors({
@@ -38,6 +39,9 @@ app.use("/payment", PaymentRouteStripe);
 
 //OrderRoute
 app.use("/orders", OrderRouter);
+
+//Balance
+app.use("/api/balance", Balance);
 
 //Error Router
 app.use((err, req, res, next) => {

@@ -26,6 +26,7 @@ const allMeals = client.db("meals").collection("allmeals");
 const upcommingMeals = client.db("meals").collection("upcomming");
 const allReviews = client.db("meals").collection("reviews");
 const orders = client.db("meals").collection("orders");
+const balanceDb = client.db("meals").collection("balance");
 
 //Export MongoDb Collections
 module.exports = {
@@ -35,4 +36,5 @@ module.exports = {
   allMeals,
   allReviews,
   orders,
+  balanceDb,
 };
