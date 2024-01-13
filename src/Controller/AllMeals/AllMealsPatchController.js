@@ -8,7 +8,7 @@ const AllMealsPatchController = async (req, res, next) => {
     }
     const ItensId = req.query.id;
     const filter = await allMeals.findOne(new ObjectId(ItensId));
-    const updated = { $set: req.body };
+    const updated = { $addToSet: { likes: req?.body?.likes } };
     const response = await allMeals.updateOne(filter, updated);
     return res.status(200).send(response);
   } catch (error) {
