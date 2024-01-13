@@ -9,7 +9,6 @@ const allMealsGetController = async (req, res, next) => {
           reviews: { $sum: "$reviews" },
         },
       },
-
       {
         $addFields: {
           totalCount: { $add: ["$likes", "$reviews"] },

@@ -10,6 +10,12 @@ const AllMealsSecureController = async (req, res, next) => {
     const pipeline = [
       {
         $addFields: {
+          likes: { $size: "$likes" },
+          reviews: { $sum: "$reviews" },
+        },
+      },
+      {
+        $addFields: {
           totalCount: { $add: ["$likes", "$reviews"] },
         },
       },
