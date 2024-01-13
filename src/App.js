@@ -12,7 +12,11 @@ const Balance = require("./Router/Balance/balanceRoute");
 //middleWare
 app.use(
   cors({
-    origin: ["https://backend-tan-ten.vercel.app/", "http://localhost:5173"],
+    origin: [
+      "https://hostel-management-delta.vercel.app",
+      "https://backend-tan-ten.vercel.app/",
+      "http://localhost:5173",
+    ],
     credentials: true,
   })
 );
